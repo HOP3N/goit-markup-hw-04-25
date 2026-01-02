@@ -1,0 +1,71 @@
+/* Portfolio page specific styles */
+
+/* Portfolio Buttons */
+.button {
+  background-color: #f5f4fa;
+  color: var(--main-color);
+  border: none;
+  border-radius: 4px;
+  padding: 6px 22px;
+  transition: all 250ms ease;
+}
+
+.button:hover,
+.button:focus {
+  background-color: var(--highlight-color);
+  color: var(--white-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+/* Portfolio Grid */
+main.main-portfolio > div:first-of-type {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin: 50px 0;
+  flex-wrap: wrap;
+}
+
+main.main-portfolio section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 0 20px;
+  margin: 50px 0;
+}
+
+main.main-portfolio section div {
+  border: 1px solid #ececec;
+  background-color: var(--white-color);
+  overflow: hidden;
+  transition: box-shadow 250ms ease;
+}
+
+main.main-portfolio section div:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+main.main-portfolio section img {
+  width: 100%;
+  display: block;
+}
+
+main.main-portfolio section .title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 200%;
+  letter-spacing: 0.06em;
+  color: var(--main-color);
+  margin: 20px 24px 4px 24px;
+  padding: 0;
+}
+
+main.main-portfolio section .sub-title {
+  color: var(--grey-color);
+  font-size: 16px;
+  line-height: 188%;
+  margin: 0 24px 20px 24px;
+  padding: 0;
+}

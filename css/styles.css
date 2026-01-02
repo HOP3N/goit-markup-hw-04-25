@@ -303,10 +303,15 @@ section.services {
   line-height: 100%;
   letter-spacing: 0.03px;
   color: var(--white-color);
-  padding: 0 0 0 20px;
+  padding: 0 20px 0 0;
+  display: block;
 }
 .link-address:hover {
   color: var(--highlight-color);
+}
+
+.link-address > .link-address--contacts {
+  padding: 0 0 0 20px;
 }
 
 .contacts-content {
@@ -592,7 +597,7 @@ footer .logo {
   letter-spacing: 0.03em;
   color: var(--white-color);
   text-decoration: none;
-  padding: 20px;
+  padding: 20px 20px 0 20px;
 }
 
 .link-address:hover {
@@ -724,6 +729,8 @@ img {
   line-height: 1.71;
   color: rgba(255, 255, 255, 0.6);
 }
+
+/* Contacts dropdown menu styles moved to css/menu.css */
 /* ----------------HEADER----------------- */
 
 .header {

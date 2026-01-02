@@ -1,0 +1,133 @@
+/* Index page specific styles */
+
+/* HERO SECTION */
+.hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 100px 50px;
+  text-align: center;
+  color: white;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 900;
+  margin-bottom: 40px;
+  color: var(--white-color);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hero .button {
+  background: var(--white-color);
+  color: #667eea;
+  border: none;
+  padding: 14px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 300ms ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.hero .button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 0 6px rgba(102, 126, 234, 0.6);
+  color: rgba(149, 54, 149, 0.6);
+}
+
+/* BENEFITS SECTION */
+.benefits {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.benefits-list {
+  display: flex;
+  column-gap: 30px;
+}
+
+.title-benefits {
+  margin: 10px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.06em;
+  color: var(--main-text-color);
+}
+
+/* SERVICES SECTION */
+.services {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.services-list {
+  display: flex;
+  column-gap: 30px;
+  list-style: none;
+}
+
+.title-services {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.16;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--main-text-color);
+  padding-bottom: 50px;
+}
+
+/* TEAM SECTION */
+.hero-team {
+  background: #f5f4fa;
+  padding-bottom: 94px;
+}
+
+.title-team {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.16;
+  text-align: center;
+  color: var(--main-text-color);
+  margin-bottom: 50px;
+}
+
+.list-team {
+  display: flex;
+  column-gap: 30px;
+  list-style: none;
+}
+
+.team-box-items {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.team-title-name {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.18;
+  text-align: center;
+  color: var(--main-text-color);
+  margin-bottom: 10px;
+}
+
+.list-item-team {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.18;
+  text-align: center;
+  color: var(--main-text-color);
+  background: var(--sub-text-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}

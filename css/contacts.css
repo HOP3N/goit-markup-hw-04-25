@@ -1,0 +1,135 @@
+/* Styles for contacts dropdown menu and contacts page */
+
+/* Contacts page specific styles */
+.main-contacts {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding-top: 40px;
+  padding-left: 40px;
+}
+
+.hero-contacts {
+  width: 400px;
+  height: auto;
+  padding: 30px;
+  background-color: var(--background-color);
+  border-radius: 8px;
+}
+
+.logo {
+  font-family: Raleway;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0.03px;
+  margin: 10px;
+}
+
+.logo-blue {
+  color: var(--highlight-color);
+  margin: 0px;
+}
+
+.logo-white {
+  color: var(--white-color);
+  margin: -4px;
+}
+
+.list--header-contacts {
+  padding-top: 10px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.link-contacts {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0.03px;
+  color: var(--white-color);
+}
+
+.link-address {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0.03px;
+  color: var(--white-color);
+  padding: 0 20px 0 0;
+  display: block;
+}
+
+.link-address:hover {
+  color: var(--highlight-color);
+}
+
+.link-address > .link-address--contacts {
+  padding: 0 0 0 20px;
+}
+
+.contacts-content {
+  margin: 30px 0 30px 0;
+}
+
+.link-mail-contacts {
+  color: #969696;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.link-tel-contacts {
+  margin-top: 10px;
+  padding-top: 10px;
+  color: #969696;
+}
+
+/* Contacts dropdown menu specific styles */
+.contacts-menu {
+  position: absolute;
+  z-index: 9999;
+}
+
+.contacts-menu .hero-contacts {
+  width: 400px;
+  padding: 30px;
+  background-color: var(--background-color);
+  border-radius: 8px;
+  color: var(--white-color);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.contacts-menu .contacts-header {
+  display: block;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.contacts-menu .logo {
+  margin: 0;
+}
+
+.contacts-menu .link-address {
+  color: var(--white-color) !important;
+  font-weight: 700;
+}
+
+.contacts-menu .link-mail-contacts,
+.contacts-menu .link-tel-contacts,
+.contacts-menu .address-title {
+  color: rgba(255,255,255,0.9) !important;
+}
+
+.contacts-menu .contacts-left .list {
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+@media (max-width: 520px) {
+  .contacts-menu { position: fixed !important; left: 8px !important; right: 8px !important; top: 10vh !important; }
+  .contacts-menu .hero-contacts { width: auto; }
+}

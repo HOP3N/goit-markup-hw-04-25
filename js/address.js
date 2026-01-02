@@ -1,12 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
-  var link = document.querySelector(".link-address");
-  if (!link) return;
+  // Use event delegation so dynamically inserted address links (e.g. in the menu)
+  // also trigger the same behavior.
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('.link-address');
+    if (!link) return;
 
-  link.addEventListener("click", function (e) {
+    // Only handle address clicks (not mailto/tel)
     e.preventDefault();
-    fetch("./js/toggle-address.json")
+
+    fetch('./js/toggle-address.json')
       .then(function (res) {
-        if (!res.ok) throw new Error("Network response was not ok");
+        if (!res.ok) throw new Error('Network response was not ok');
         return res.json();
       })
       .then(function (data) {
@@ -21,14 +25,14 @@ document.addEventListener("DOMContentLoaded", function () {
             url = data.configurations[0].url;
         }
         if (!url) {
-          alert("Не знайдено URL в toggle-address.json");
+          alert('Не знайдено URL в toggle-address.json');
           return;
         }
-        var ok = confirm("Відкрити мапу за адресою?");
-        if (ok) window.open(url, "_blank", "noopener");
+        var ok = confirm('Відкрити мапу за адресою?');
+        if (ok) window.open(url, '_blank', 'noopener');
       })
       .catch(function (err) {
-        alert("Не вдалося отримати дані: " + err.message);
+        alert('Не вдалося отримати дані: ' + err.message);
       });
   });
 });
