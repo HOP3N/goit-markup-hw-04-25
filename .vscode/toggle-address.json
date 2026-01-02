@@ -1,0 +1,11 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "default",
+      "request": "redirect",
+      "name": "Open Google maps",
+      "url": "https://maps.app.goo.gl/JuQZoqVdh6os7BST6"
+    }
+  ]
+}
