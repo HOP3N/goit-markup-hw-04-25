@@ -43,24 +43,11 @@ document.addEventListener("DOMContentLoaded", function () {
         menu.appendChild(inner);
         document.body.appendChild(menu);
 
-        // Position menu near trigger
+        // Position menu directly below trigger link, shifted left
         var rect = trigger.getBoundingClientRect();
-        var left = rect.left + window.scrollX;
-        var top = rect.bottom + window.scrollY + 6;
-        // keep inside viewport
-        var menuRect = menu.getBoundingClientRect();
-        if (left + menuRect.width > window.scrollX + window.innerWidth) {
-          left = Math.max(
-            window.scrollX + 8,
-            window.scrollX + window.innerWidth - menuRect.width - 8
-          );
-        }
-        if (top + menuRect.height > window.scrollY + window.innerHeight) {
-          top = rect.top + window.scrollY - menuRect.height - 6;
-        }
         menu.style.position = "absolute";
-        menu.style.left = left + "px";
-        menu.style.top = top + "px";
+        menu.style.left = (rect.left + window.scrollX - 30) + "px";
+        menu.style.top = (rect.bottom + window.scrollY + 8) + "px";
 
         // focus first link
         var firstLink = menu.querySelector("a");

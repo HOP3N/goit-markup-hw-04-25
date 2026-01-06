@@ -1,5 +1,18 @@
 /* Portfolio page specific styles */
 
+/* Header logo */
+header .logo {
+  font-family: Raleway;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0.03px;
+  margin: 10px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
 /* Portfolio Buttons */
 .button {
   background-color: #f5f4fa;

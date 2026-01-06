@@ -1,5 +1,18 @@
 /* Index page specific styles */
 
+/* Header logo */
+header .logo {
+  font-family: Raleway;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0.03px;
+  margin: 10px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
 /* HERO SECTION */
 .hero {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
