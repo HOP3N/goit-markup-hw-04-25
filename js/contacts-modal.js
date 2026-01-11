@@ -2,15 +2,30 @@ document.addEventListener("DOMContentLoaded", function () {
   var selector = 'a.js-open-contacts, a[href$="contacts.html"]';
   var links = Array.prototype.slice.call(document.querySelectorAll(selector));
   if (!links.length) return;
+  var currentMenu = null;
+  var closeTimeout = null;
 
   links.forEach(function (link) {
-    link.addEventListener("click", function (e) {
+    // Show menu on hover
+    link.addEventListener("mouseenter", function (e) {
       e.preventDefault();
+      clearTimeout(closeTimeout);
       openContactsMenu(link.getAttribute("href") || "./contacts.html", link);
+    });
+
+    // Hide menu on mouse leave
+    link.addEventListener("mouseleave", function () {
+      closeTimeout = setTimeout(function () {
+        if (currentMenu && currentMenu.parentNode) {
+          currentMenu.parentNode.removeChild(currentMenu);
+          currentMenu = null;
+        }
+      }, 400);
     });
   });
 
   function openContactsMenu(url, trigger) {
+    clearTimeout(closeTimeout);
     fetch(url)
       .then(function (res) {
         if (!res.ok) throw new Error("Network response was not ok");
@@ -25,8 +40,9 @@ document.addEventListener("DOMContentLoaded", function () {
           doc.body;
 
         // remove existing menu
-        var existing = document.querySelector(".contacts-menu");
-        if (existing) existing.parentNode.removeChild(existing);
+        if (currentMenu && currentMenu.parentNode) {
+          currentMenu.parentNode.removeChild(currentMenu);
+        }
 
         var menu = document.createElement("div");
         menu.className = "contacts-menu";
@@ -42,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         menu.appendChild(inner);
         document.body.appendChild(menu);
+        currentMenu = menu;
 
         // Position menu directly below trigger link, shifted left
         var rect = trigger.getBoundingClientRect();
@@ -53,15 +70,32 @@ document.addEventListener("DOMContentLoaded", function () {
         var firstLink = menu.querySelector("a");
         if (firstLink) firstLink.focus();
 
+        // Keep menu open while hovering over it
+        menu.addEventListener("mouseenter", function () {
+          clearTimeout(closeTimeout);
+        });
+
+        menu.addEventListener("mouseleave", function () {
+          closeTimeout = setTimeout(function () {
+            if (currentMenu && currentMenu.parentNode) {
+              currentMenu.parentNode.removeChild(currentMenu);
+              currentMenu = null;
+            }
+          }, 400);
+        });
+
         function closeMenu() {
-          if (menu && menu.parentNode) menu.parentNode.removeChild(menu);
+          if (currentMenu && currentMenu.parentNode) {
+            currentMenu.parentNode.removeChild(currentMenu);
+            currentMenu = null;
+          }
           document.removeEventListener("click", onDocClick, true);
           document.removeEventListener("keydown", onKey);
           window.removeEventListener("resize", closeMenu);
         }
 
         function onDocClick(e) {
-          if (!menu.contains(e.target) && e.target !== trigger) closeMenu();
+          if (menu && !menu.contains(e.target) && e.target !== trigger) closeMenu();
         }
 
         function onKey(e) {

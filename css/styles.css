@@ -505,6 +505,27 @@ header .link:focus {
 
 header .link.current {
   color: var(--highlight-color);
+  border-bottom: 3px solid var(--highlight-color);
+  padding-bottom: 30px;
+}
+
+/* Index page - black underline */
+body.index-page header .link.current {
+  color: var(--main-text-color);
+  border-bottom-color: var(--main-text-color);
+}
+
+/* Index page - hover and focus effects */
+body.index-page header .link.current:hover,
+body.index-page header .link.current:focus {
+  color: var(--highlight-color);
+  border-bottom-color: var(--highlight-color);
+}
+
+/* Portfolio page - blue underline */
+body.portfolio-page header .link.current {
+  color: var(--highlight-color);
+  border-bottom-color: var(--highlight-color);
 }
 
 header > div .list {

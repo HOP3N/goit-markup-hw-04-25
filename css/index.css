@@ -15,7 +15,11 @@ header .logo {
 
 /* HERO SECTION */
 .hero {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-image: url('../images/bg-index-hero.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #667eea;
   padding: 100px 50px;
   text-align: center;
   color: white;
@@ -143,4 +147,61 @@ header .logo {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
+}
+/* CLIENTS SECTION */
+.clients {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.title-clients {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.16;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--main-text-color);
+  margin-bottom: 50px;
+}
+
+.clients-list {
+  display: flex;
+  column-gap: 30px;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.clients-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clients-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 92px;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.clients-link:hover,
+.clients-link:focus {
+  border-color: var(--highlight-color);
+  background-color: #f5f4fa;
+}
+
+.clients-link svg {
+  fill: #afb1b8;
+  transition: fill 0.3s ease;
+}
+
+.clients-link:hover svg,
+.clients-link:focus svg {
+  fill: var(--highlight-color);
 }

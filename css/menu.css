@@ -1,0 +1,123 @@
+/* Contacts dropdown menu hover styles */
+
+/* Hover effect for the "Контакти" link in header */
+.js-open-contacts {
+  position: relative;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.js-open-contacts:hover,
+.js-open-contacts:focus {
+  color: var(--highlight-color);
+  text-shadow: 0 2px 4px rgba(33, 150, 243, 0.2);
+}
+
+/* Contacts menu container styling */
+.contacts-menu {
+  position: absolute;
+  z-index: 9999;
+  animation: slideDown 0.6s ease;
+}
+
+/* Animation for menu appearing */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero contacts box in menu */
+.contacts-menu .hero-contacts {
+  width: 400px;
+  padding: 30px;
+  background-color: var(--background-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.contacts-menu .hero-contacts:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Logo hover effect in contacts menu */
+.contacts-menu .logo {
+  transition: opacity 0.3s ease;
+}
+
+.contacts-menu .logo:hover {
+  opacity: 0.8;
+}
+
+/* Address link hover effect */
+.contacts-menu .link-address {
+  transition: color 0.3s ease, padding-left 0.3s ease;
+  cursor: pointer;
+}
+
+.contacts-menu .link-address:hover {
+  color: var(--highlight-color);
+  padding-left: 10px;
+}
+
+/* Mail link hover effect */
+.contacts-menu .link-mail-contacts {
+  transition: color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.contacts-menu .link-mail-contacts:hover {
+  color: var(--highlight-color);
+  transform: translateX(5px);
+}
+
+/* Phone link hover effect */
+.contacts-menu .link-tel-contacts {
+  transition: color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.contacts-menu .link-tel-contacts:hover {
+  color: var(--highlight-color);
+  transform: translateX(5px);
+}
+
+/* All links in contacts menu */
+.contacts-menu a {
+  transition: all 0.3s ease;
+}
+
+.contacts-menu a:hover,
+.contacts-menu a:focus {
+  outline: none;
+}
+
+/* Contacts menu items list styling */
+.contacts-menu .list--header-contacts {
+  transition: all 0.3s ease;
+}
+
+.contacts-menu .list--header-contacts a {
+  position: relative;
+}
+
+.contacts-menu .list--header-contacts a::before {
+  content: '';
+  position: absolute;
+  left: -15px;
+  width: 0;
+  height: 2px;
+  background-color: var(--highlight-color);
+  transition: width 0.3s ease;
+}
+
+.contacts-menu .list--header-contacts a:hover::before,
+.contacts-menu .list--header-contacts a:focus::before {
+  width: 8px;
+}
