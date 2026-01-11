@@ -4,10 +4,27 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!links.length) return;
   var currentMenu = null;
   var closeTimeout = null;
+  var menuClickedFlag = false;
 
   links.forEach(function (link) {
+    // Prevent navigation to contacts page and open menu on click
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      clearTimeout(closeTimeout);
+      menuClickedFlag = true;
+      openContactsMenu(link.getAttribute("href") || "./contacts.html", link);
+    });
+
     // Show menu on hover
     link.addEventListener("mouseenter", function (e) {
+      e.preventDefault();
+      clearTimeout(closeTimeout);
+      menuClickedFlag = false;
+      openContactsMenu(link.getAttribute("href") || "./contacts.html", link);
+    });
+
+    // Show menu on focus (keyboard)
+    link.addEventListener("focus", function (e) {
       e.preventDefault();
       clearTimeout(closeTimeout);
       openContactsMenu(link.getAttribute("href") || "./contacts.html", link);
@@ -15,12 +32,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Hide menu on mouse leave
     link.addEventListener("mouseleave", function () {
+      if (!menuClickedFlag) {
+        closeTimeout = setTimeout(function () {
+          if (currentMenu && currentMenu.parentNode) {
+            currentMenu.parentNode.removeChild(currentMenu);
+            currentMenu = null;
+          }
+        }, 400);
+      }
+    });
+
+    // Hide menu on blur (keyboard)
+    link.addEventListener("blur", function () {
+      menuClickedFlag = false;
       closeTimeout = setTimeout(function () {
         if (currentMenu && currentMenu.parentNode) {
           currentMenu.parentNode.removeChild(currentMenu);
           currentMenu = null;
         }
-      }, 400);
+      }, 200);
     });
   });
 

@@ -509,10 +509,10 @@ header .link.current {
   padding-bottom: 30px;
 }
 
-/* Index page - black underline */
+/* Index page - blue underline */
 body.index-page header .link.current {
-  color: var(--main-text-color);
-  border-bottom-color: var(--main-text-color);
+  color: var(--highlight-color);
+  border-bottom-color: var(--highlight-color);
 }
 
 /* Index page - hover and focus effects */
@@ -524,6 +524,19 @@ body.index-page header .link.current:focus {
 
 /* Portfolio page - blue underline */
 body.portfolio-page header .link.current {
+  color: var(--highlight-color);
+  border-bottom-color: var(--highlight-color);
+}
+
+/* Contacts page - black underline */
+body.contacts-page header .link.current {
+  color: var(--main-text-color);
+  border-bottom-color: var(--main-text-color);
+}
+
+/* Contacts page - hover and focus effects */
+body.contacts-page header .link.current:hover,
+body.contacts-page header .link.current:focus {
   color: var(--highlight-color);
   border-bottom-color: var(--highlight-color);
 }
